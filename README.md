@@ -19,9 +19,14 @@ $('.module.row').watchCurrentlyActiveRow();
 
 or
 
+var wasCurrentlyActiveRow, currentlyActiveRow;
+
 $('.module.row').watchCurrentlyActiveRow(function(){
+	if(wasCurrentlyActiveRow){
+		wasCurrentlyActiveRow.removeClass('currentlyActiveRow');	
+	}
 	if(currentlyActiveRow){
-		currentlyActiveRow.addClass('active');
+		currentlyActiveRow.addClass('currentlyActiveRow');
 	}
 });
 ```
